@@ -1,0 +1,29 @@
+{
+  "name": "virtual-museum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdunc/virtual-museum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdunc/virtual-museum/issues"
+  },
+  "homepage": "https://github.com/jdunc/virtual-museum#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "knex": "^0.12.6",
+    "pg": "^6.1.2",
+    "superagent": "^3.3.1",
+    "superagent-no-cache": "^0.1.0",
+    "superagent-prefix": "0.0.2"
+  }
+}
