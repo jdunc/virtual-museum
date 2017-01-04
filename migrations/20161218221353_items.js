@@ -13,8 +13,6 @@ exports.up = function(knex, Promise) {
     table.string("dimensions").notNullable().defaultTo('');
     table.string("location").notNullable().defaultTo('');
     table.string("provenance").notNullable().defaultTo('');
-
-
     table.timestamp(true, true);
   })
 };

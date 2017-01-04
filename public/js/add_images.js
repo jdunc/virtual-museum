@@ -17,6 +17,11 @@
   });
   $( "#selections" ).change(function() {
    var selectedItemId = $('#selections option:selected')[0].value;
+   $('<input>').attr({
+    type: 'hidden',
+    name: 'id',
+    value: `${selectedItemId}`
+}).appendTo('form');
    addImages(selectedItemId);
   });
 }) //end on document ready
@@ -26,32 +31,35 @@ function addImages(itemId){
   $('body').append(
     `
     <div class="container" id="imagesContainer">
-      <form method="post" enctype="multipart/form-data" action="/upload" id="imagesForm">
-          <input type="file" name="file"><br><br>
+      <form method="post" enctype="multipart/form-data" action="/add_images_action" id="imagesForm">
+          <input type="file" name="image1"><br><br>
           <button type="button" id="anotherImage">Add Another Image</button><br><br>
           <input type="submit" value="Submit" id="submitButton">
       </form>
     </div>`
   );
   addImageButton();
-  submitImages();
+  // submitImages();
 }
 
 function addImageButton(){
   //on clicking anotherImage, add another choose file button
   $("#anotherImage").click( function(){
+    var imageNumber = $(':file').length;
+    var newNumber = imageNumber + 1;
+    console.log(imageNumber);
     console.log('clicked another image');
     $("#anotherImage").before(
       `
-      <input type="file" name="file"><br><br>
+      <input type="file" name="image${newNumber}"><br><br>
       `);
   });//end of another image click
 }
 
-function submitImages(){
-  $('#submitButton').click(
-    function(){
-      event.preventDefault();
-    }
-  )
-}
+// function submitImages(){
+//   $('#submitButton').click(
+//     function(){
+//       event.preventDefault();
+//     }
+//   )
+// }
