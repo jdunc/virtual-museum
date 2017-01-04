@@ -29,6 +29,7 @@ function fillPage(item){
   })
   .then(function(getData){
     $('#alterForm').remove();
+    $('#updatedInfo').remove();
     $('body').append(
       `<div class="container" id="alterForm">
         <br>
@@ -96,20 +97,68 @@ function fillPage(item){
       </div>
       `
     )
+    $('form').on('submit', function(e){
+      e.preventDefault();
+      let formData = {};
+      $('input').each(function(){
+        if(this.id !== 'submit'  && this.className !== 'select-dropdown'){
+          console.log($(this));
+          formData[this.id] = $(this).val();
+        }
+      });
+      $.ajax({
+        type : 'PATCH',
+        data: JSON.stringify(formData),
+        url: `/items/${item}`,
+        dataType: 'json',
+        contentType: 'application/json; charset=UTF-8'
+      })
+      .then((data) => {
+        console.log(data);
+        getURL = `/items/${data.id}`
+        $.get({
+          url: getURL,
+        }).then((getData) => {
+          $('#alterForm').remove();
+          $('#updatedInfo').remove();
+          resetDropDown();
+          $('body').append(
+            `<div id="updatedInfo" class="container">
+              <h4>Object Updated!</h4><br>
+                  <h5>Item Name</h5><a>${getData.name}</a>
+                  <h5>Type</h5><a>${getData.type}</a>
+                  <h5>Location</h5><a>${getData.culture}</a>
+                  <h5>Culture</h5><a>${getData.collection}</a>
+                  <h5>Collection</h5><a>${getData.location}</a>
+                  <h5>Story</h5><a>${getData.story}</a>
+                  <h5>Description</h5><a>${getData.description}</a>
+                  <h5>Dimensions</h5><a>${getData.dimensions}</a>
+                  <h5>Provenance</h5><a>${getData.provenance}</a>
+            </div>
+            `
+          )
+        })
+      })
+      .catch((err) => {
+        alert('the request failed: ', err);
+      })
+    });//end on click submit
   });
 }
 
-
-// $('body').append(
-//   `<h4>Object Added</h4><br>
-//         <h5>Item Name</h5><a>${getData.name}</a>
-//         <h5>Type</h5><a>${getData.type}</a>
-//         <h5>Location</h5><a>${getData.culture}</a>
-//         <h5>Culture</h5><a>${getData.collection}</a>
-//         <h5>Collection</h5><a>${getData.location}</a>
-//         <h5>Story</h5><a>${getData.story}</a>
-//         <h5>Description</h5><a>${getData.description}</a>
-//         <h5>Dimensions</h5><a>${getData.dimensions}</a>
-//         <h5>Provenance</h5><a>${getData.provenance}</a>
-//   `
-// )
+function resetDropDown(){
+  $('#selections > option').each(function () {this.remove();});
+  $.get({
+    url: '/items',
+  })
+  .then(function(results){
+    console.log(results);
+    $(results).each(function(){
+      console.log(this.name);
+      $('#selections').append(
+        `<option value=${this.id}>${this.name}</option>`
+      )
+    });
+    $('select').material_select();
+  });
+}
