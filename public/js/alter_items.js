@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  console.log('add images js here');
  $(".button-collapse").sideNav();
  $('select').material_select();
+//dynamically update drop down with items from database
  $.get({
    url: '/items',
  })
@@ -15,14 +15,14 @@ $(document).ready(function(){
    });
    $('select').material_select();
  });
-
+//once item is selected fill page with form to edit info
  $( "#selections" ).change(function() {
   var selectedItemId = $('#selections option:selected')[0].value;
   fillPage(selectedItemId);
 });
 
 }) //end on document ready
-
+//function to add editable form to page to update item
 function fillPage(item){
   $.get({
     url: `/items/${item}`,
@@ -88,6 +88,12 @@ function fillPage(item){
             </div>
           </div>
           <div class="row">
+            <div class="input-field col s12">
+              <select id="primary_image" type="text" value="${getData.provenance}" >
+              </select>
+            </div>
+          </div>
+          <div class="row">
             <div class="input-field col s12 ">
               <input id="submit" type="submit" class="waves-effect waves-light btn"  >
             </div>
@@ -97,10 +103,12 @@ function fillPage(item){
       </div>
       `
     )
+    //when form is submitted, place ajax patch call to route that will update item details
     $('form').on('submit', function(e){
       e.preventDefault();
       let formData = {};
       $('input').each(function(){
+        //select all the form info that's not submit or the select default message  
         if(this.id !== 'submit'  && this.className !== 'select-dropdown'){
           console.log($(this));
           formData[this.id] = $(this).val();

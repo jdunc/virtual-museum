@@ -6,8 +6,7 @@ const knex = require('../knex');
 var fs = require('fs');
 const bodyParser = require('body-parser');
 router.post('/add_images_action', (req, res, next) =>{
-  var dir = './images';
-  var sampleFile;
+  var dir = `./images/${req.body.id}`;
   if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
   }
@@ -16,19 +15,20 @@ router.post('/add_images_action', (req, res, next) =>{
       return;
   }
   console.log('files:', Object.keys(req.files).length);
-  console.log(req.body.);
+  console.log('body:',req.body);
+  console.log('directory', dir);
   for (let i = 0; i < Object.keys(req.files).length; i++) {
     console.log(req.files[Object.keys(req.files)[i]]);
+    var tempFile = req.files[Object.keys(req.files)[i]];
+    tempFile.mv(`${dir}/${req.files[Object.keys(req.files)[i]].name}`, function(err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+      else {
+        res.send('File uploaded!');
+      }
+    });
   }
-  // sampleFile = req.files.sampleFile;
-  // sampleFile.mv('/somewhere/on/your/server/filename.jpg', function(err) {
-  //     if (err) {
-  //         res.status(500).send(err);
-  //     }
-  //     else {
-  //         res.send('File uploaded!');
-  //     }
-  // });
   console.log('add_images_action');
   // var tempPath = req.files.file.path,
   //       targetPath = path.resolve('./uploads/image.png');
@@ -36,7 +36,6 @@ router.post('/add_images_action', (req, res, next) =>{
   // .returning(['id', 'name', 'location', 'dimensions', 'provenance', 'culture']).then((items) => {
   //   res.send(items[0]);
   // });
-  res.send(req.body)
 });
 
 module.exports = router;
