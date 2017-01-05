@@ -25,7 +25,9 @@ router.post('/add_images_action', (req, res, next) =>{
         res.status(500).send(err);
       }
       else {
-        res.send('File uploaded!');
+        res.render('pages/add_images', {
+          data: 'Images Uploaded!',
+        });
       }
     });
   }

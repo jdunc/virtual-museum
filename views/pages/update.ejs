@@ -10,95 +10,109 @@
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous"></script>
   <!-- Compiled and minified CSS -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
- <!-- Compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
- <script src="/js/update.js"></script>
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="/js/update.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <nav>
-  <div class="nav-wrapper teal">
-    <a href="" class="brand-logo">&nbsp&nbsp&nbspArtifact Management Pages</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="add_images">Add Images</a></li>
-      <li><a href="update_artists">Add Artists</a></li>
-      <li><a href="alter_items">Alter Item</a></li>
-      <li><a href="remove_items">Remove Items</a></li>
-    </ul>
-    <ul class="side-nav" id="mobile-demo">
-      <li><a href="add_images">Add Images</a></li>
-      <li><a href="update_artists">Add Artists</a></li>
-      <li><a href="alter_items">Alter Item</a></li>
-      <li><a href="remove_items">Remove Items</a></li>
-    </ul>
-  </div>
-</nav>
+    <div class="nav-wrapper teal">
+      <a href="" class="brand-logo">&nbsp&nbsp&nbspArtifact Management Pages</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="add_images">Add Images</a></li>
+        <li><a href="update_artists">Add Artists</a></li>
+        <li><a href="alter_items">Alter Item</a></li>
+        <li><a href="remove_items">Remove Items</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="add_images">Add Images</a></li>
+        <li><a href="update_artists">Add Artists</a></li>
+        <li><a href="alter_items">Alter Item</a></li>
+        <li><a href="remove_items">Remove Items</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     <br>
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="" id="name" type="text" class="validate" >
-          <label for="name">Object Name</label>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="" id="name" type="text" class="validate" required>
+            <label for="name">Object Name *</label>
+          </div>
         </div>
-        <div class="input-field col s12">
-          <input id="type" type="text"  >
-          <label for="type">Type</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="reference_id" type="text">
+            <label for="reference_id">Reference Id</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="culture" type="text"  >
-          <label for="culture">Culture</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="type" type="text"  >
+            <label for="type">Type</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="collection" type="text"  >
-          <label for="collection">Collection</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="culture" type="text"  >
+            <label for="culture">Culture</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="location" type="text"  >
-          <label for="location">Location</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="collection" type="text"  >
+            <label for="collection">Collection</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="story" type="text"  >
-          <label for="story">Story</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="location" type="text"  >
+            <label for="location">Location</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="description" type="text"  >
-          <label for="description">Description</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="story" type="text"  >
+            <label for="story">Story</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="dimensions" type="text"  >
-          <label for="dimensions">Dimensions</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="description" type="text" required>
+            <label for="description">Description *</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="provenance" type="text"  >
-          <label for="provenance">Provenance</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="dimensions" type="text"  >
+            <label for="dimensions">Dimensions</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12 ">
-          <input id="submit" type="submit" class="waves-effect waves-light btn"  >
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="provenance" type="text"  >
+            <label for="provenance">Provenance</label>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="additional" class="materialize-textarea" value="${getData.additional}" ></textarea>
+              <label for="additional" class="active">Additional Information (Formatted in HTML)</label>
+            </div>
+          </div>
         </div>
-      </div>
-    </form>
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input id="submit" type="submit" class="waves-effect waves-light btn"  >
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </body>
 </html>

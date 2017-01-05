@@ -8,6 +8,7 @@
         console.log($(this));
         formData[this.id] = $(this).val();
       }
+      formData['additional'] = $('#additional').value;
     });
     $.post({
       data: JSON.stringify(formData),

@@ -44,14 +44,14 @@ router.post('/items', (req, res) => {
   console.log('HEADERS', req.headers);
   console.log('getting this!', req.body);
   knex('items').insert(req.body)
-  .returning(['id', 'name', 'location', 'dimensions', 'provenance', 'culture']).then((items) => {
+  .returning('*').then((items) => {
     res.send(items[0]);
   });
 });
 
 router.patch('/items/:id', (req, res) => {
   knex('items').where('id', req.params.id).update(req.body)
-  .returning(['id', 'name', 'location', 'dimensions', 'provenance', 'culture']).then((items) => {
+  .returning('*').then((items) => {
     res.send(items[0]);
   });
 });

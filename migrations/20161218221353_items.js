@@ -14,6 +14,7 @@ exports.up = function(knex, Promise) {
     table.string("location").notNullable().defaultTo('-');
     table.string("provenance").notNullable().defaultTo('-');
     table.string("primary_image").notNullable().defaultTo('-');
+    table.string("reference_id").notNullable().defaultTo('-');
     table.timestamp(true, true);
   })
 };

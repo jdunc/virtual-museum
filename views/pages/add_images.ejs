@@ -38,9 +38,12 @@
   <div class="container">
     <div class="row">
       <br><br>
+      <% if(data !== '') { %>
+        <a><%= data %><%= %></a><br><br>
+        <% } %>
       <div class="input-field col s12">
         <select id="selections">
-          <option value="" disabled selected>Choose your option</option>
+          <option value="" disabled selected>Select an Item</option>
         </select>
         <label>Select An Item</label>
       </div>

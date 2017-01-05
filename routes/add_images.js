@@ -7,6 +7,7 @@ const knex = require('../knex');
 router.get('/add_images', (req, res, next) =>{
   console.log('add_images');
   res.render('pages/add_images', {
+    data: ''
   });
 });
 
