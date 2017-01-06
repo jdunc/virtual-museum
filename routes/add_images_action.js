@@ -5,6 +5,7 @@ const router = express.Router();
 const knex = require('../knex');
 var fs = require('fs');
 const bodyParser = require('body-parser');
+
 router.post('/add_images_action', (req, res, next) =>{
   var dir = `./images/${req.body.id}`;
   if (!fs.existsSync(dir)){

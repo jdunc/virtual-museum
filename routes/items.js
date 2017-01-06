@@ -57,10 +57,10 @@ router.patch('/items/:id', (req, res) => {
 });
 
 router.delete('/items/:id', (req, res) => {
-  knex('items').where('id', req.params.id).first().then((items) => {
+  knex('items').where('id', req.params.id).first().then((item) => {
     knex('items').where('id', req.params.id).del().then(() => {
-      delete items.id;
-      res.send(items);
+      delete item.id;
+      res.send(item);
     });
   });
 });

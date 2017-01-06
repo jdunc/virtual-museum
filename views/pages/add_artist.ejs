@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add Artist</title>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="/js/add_artist.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <%- include ./partials/nav.ejs %>
+  <div class="container">
+    <br>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="" id="artist_name" type="text" class="validate" required>
+            <label for="artist_name">Artist Name *</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="brief" type="text">
+            <label for="brief">Brief Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description" type="text" class="materialize-textarea"></textarea>
+            <label for="description">Description (Formatted in HTML)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="community" type="text" class="materialize-textarea"></textarea>
+            <label for="community">Community</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <a>Upload Artist Profile Image:</a><br>
+            <input type="file" name="profileImage" id="profileImage"><br><br>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input id="submit" type="submit" class="waves-effect waves-light btn"  >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

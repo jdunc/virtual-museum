@@ -11,11 +11,12 @@ const items = require('./routes/items');
 const images = require('./routes/images');
 const artists = require('./routes/artists');
 const materials = require('./routes/materials');
-const updatePage = require('./routes/update');
+const add_item = require('./routes/add_item');
 const add_images = require('./routes/add_images');
 const alter_item = require('./routes/alter_item');
-const remove_items = require('./routes/remove_items');
+const remove_item = require('./routes/remove_item');
 const add_images_action = require('./routes/add_images_action');
+const add_artist = require('./routes/add_artist');
 
 // var nocache = require('superagent-no-cache');
 var request = require('superagent');
@@ -32,14 +33,14 @@ app.use(fileUpload());
 
 app.use(add_images);
 app.use(alter_item);
-app.use(remove_items);
-app.use(updatePage);
+app.use(remove_item);
+app.use(add_item);
 app.use(items);
 app.use(images);
 app.use(materials);
 app.use(artists);
 app.use(add_images_action);
-
+app.use(add_artist);
 app.use((_req, res, _next) => {
   res.sendStatus(404);
 });
