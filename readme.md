@@ -59,6 +59,13 @@
 </ul>
 <h2><strong><span style="text-decoration: underline;">Tasks To Be Completed:</span> </strong></h2>
 <h2><strong><span style="text-decoration: underline;">Tasks Completed:</span> </strong></h2>
+<ul>
+<li>Create Database to Store info
+<li>Items and their info</li> 
+<li>Artists and their info</li> 
+<li>Item Artist Join Table</li> 
+</li>
+</ul>
 <h2><strong><span style="text-decoration: underline;">Additional Resources:</span> </strong></h2>
 http://www.glocalventures.org/index.php
 
