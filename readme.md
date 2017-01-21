@@ -58,6 +58,13 @@
  	<li>Create method for updating additional information pages</li>
 </ul>
 <h2><strong><span style="text-decoration: underline;">Tasks To Be Completed:</span> </strong></h2>
+<ul>
+<li>User Login to database administration page</li>
+<li>Create test to ensure database functionality</li>
+<li>Finish dynamic page creation</li>
+<li>add costs to items</li>
+<li>add shopping cart/payment functionality </li>
+</ul>
 <h2><strong><span style="text-decoration: underline;">Tasks Completed:</span> </strong></h2>
 Create Database to Store info with a table for each of the following:
 <ul>
