@@ -59,12 +59,19 @@
 </ul>
 <h2><strong><span style="text-decoration: underline;">Tasks To Be Completed:</span> </strong></h2>
 <h2><strong><span style="text-decoration: underline;">Tasks Completed:</span> </strong></h2>
+Create Database to Store info with a table for each of the following:
 <ul>
-<ul>Create Database to Store info
 <li>Items and their info</li> 
 <li>Artists and their info</li> 
 <li>Item Artist Join Table</li> 
+<li>Featured Items, Artists, Collections</li> 
 </ul>
+Make Create/Read/Update/Delete Routes to access API
+Create Pages That Update through a call to the routes
+<ul>
+<li>Add New Items / Artists</li> 
+<li>Edit Artists / Items</li> 
+<li>Update Item / Artists</li> 
 </ul>
 <h2><strong><span style="text-decoration: underline;">Additional Resources:</span> </strong></h2>
 http://www.glocalventures.org/index.php
