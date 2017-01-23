@@ -22,28 +22,28 @@
   <div class="container">
     <br>
     <div class="row">
-      <form class="col s12">
+      <form class="col s12" method="post" enctype="multipart/form-data" action="/add_artist" id="artistForm">
         <div class="row">
           <div class="input-field col s12">
-            <input placeholder="" id="artist_name" type="text" class="validate" required>
+            <input name="artist_name" placeholder="" id="artist_name" type="text" class="validate" required>
             <label for="artist_name">Artist Name *</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="brief" type="text">
+            <input name="brief" id="brief" type="text">
             <label for="brief">Brief Description</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <textarea id="description" type="text" class="materialize-textarea"></textarea>
+            <textarea name="description" id="description" type="text" class="materialize-textarea"></textarea>
             <label for="description">Description (Formatted in HTML)</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <textarea id="community" type="text" class="materialize-textarea"></textarea>
+            <textarea name="community" id="community" type="text" class="materialize-textarea"></textarea>
             <label for="community">Community</label>
           </div>
         </div>
@@ -51,12 +51,11 @@
           <div class="input-field col s12">
             <a>Upload Artist Profile Image:</a><br>
             <input type="file" name="profileImage" id="profileImage"><br><br>
-
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 ">
-            <input id="submit" type="submit" class="waves-effect waves-light btn"  >
+            <input id="submit" type="submit" class="waves-effect waves-light btn" value="Submit" >
           </div>
         </div>
       </form>

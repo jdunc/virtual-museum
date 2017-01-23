@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add Artist</title>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="/js/new_artist.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <%- include ./partials/nav.ejs %>
+  <% var fs = require('fs');
+
+
+  %>
+  <div class="container">
+    <div class="container">
+     <h4>Artist Added</h4><br>
+     <h5>Name</h5><a><%= data['artist']['artist_name'] %></a>
+     <h5>Brief</h5><a><%= data['artist']['brief'] %></a>
+     <h5>Description</h5><a><%= data['artist']['description'] %></a>
+     <h5>Community</h5><a><%= data['artist']['community'] %></a>
+     <h5>Image:</h5><img src="<%= data['artist']['community'] %>" />
+
+     <br><br>
+      <button id="reloadPage">Add Another Artist</button>
+     </div>
+  </div>
+</body>
+</html>

@@ -14,36 +14,50 @@ router.get('/add_artist', (req, res, next) =>{
 });
 
 router.post('/add_artist', (req, res, next) =>{
-  var dir = `./images/artists/${req.body.id}`;
-  knex('artists').insert(req.body)
-  .returning('*').then((artists) => {
-    res.send(artists[0]);
-    uploadImage();
-    if (!fs.existsSync(dir)){
-      fs.mkdirSync(dir);
+  // var formInfo = {};
+  console.log('body',req.body);
+  console.log('files:', Object.keys(req.files).length);
+  console.log(req.files[Object.keys(req.files)[0]]);
+  // console.log('files:',req.body.file);
+    if (req.files === undefined) {
+      knex('artists').insert(req.body)
+      .returning('*').then((artists) => {
+        let response = {};
+        response.artist = artists[0];
+        response.file='No files were uploaded.';
+        console.log(res.artist);
+        res.status(200);
+        res.send(response);
+       });
     }
-    if (!req.files) {
-      res.send('No files were uploaded.');
-      return;
-    }
-    console.log('files:', Object.keys(req.files).length);
-    console.log('body:',req.body);
-    console.log('directory', dir);
-    for (let i = 0; i < Object.keys(req.files).length; i++) {
-      console.log(req.files[Object.keys(req.files)[i]]);
-      var tempFile = req.files[Object.keys(req.files)[i]];
-      tempFile.mv(`${dir}/${req.files[Object.keys(req.files)[i]].name}`, function(err) {
+    else if(req.files !== undefined){
+      knex('artists').insert(req.body)
+      .returning('*').then((artists) => {
+        console.log('artists',artists);
+        var dir = `./images/artists/${artists[0].id}`;
+        if (!fs.existsSync(dir)){
+          console.log('make directory');
+          fs.mkdirSync(dir);
+        }
+        let response = {};
+        response.artist = artists[0];
+      var tempFile = req.files[Object.keys(req.files)[0]];
+      tempFile.mv(`${dir}/${req.files[Object.keys(req.files)[0]].name}`, function(err) {
         if (err) {
-          res.status(500).send(err);
+          response.file = 'Error uploading file, please try the edit artist page';
+          res.send(response);
         }
         else {
-          res.render('pages/add_images', {
-            data: 'Images Uploaded!',
+          response.file='File Uploaded!';
+          res.render('pages/new_artist', {
+            data: response,
           });
+          console.log('response',response);
         }
       });
-    }
+
   });
+  }
   console.log('add new artist');
 });
 

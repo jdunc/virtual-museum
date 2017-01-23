@@ -2,9 +2,9 @@
   "name": "virtual-museum",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,14 +17,21 @@
   },
   "homepage": "https://github.com/jdunc/virtual-museum#readme",
   "dependencies": {
+    "bcrypt-as-promised": "^1.1.0",
     "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-fileupload": "0.0.5",
+    "express-form-data": "^1.0.1",
     "knex": "^0.12.6",
+    "mocha": "^3.2.0",
+    "multer": "^1.2.1",
     "pg": "^6.1.2",
     "superagent": "^3.3.1",
     "superagent-no-cache": "^0.1.0",
-    "superagent-prefix": "0.0.2"
+    "superagent-prefix": "0.0.2",
+    "supertest": "^2.0.1",
+    "then-fs": "^2.0.0"
   }
 }

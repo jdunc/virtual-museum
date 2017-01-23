@@ -7,12 +7,12 @@ exports.up = function(knex, Promise) {
     table.string("artist_name").notNullable().defaultTo('-');
     table.string("culture").notNullable().defaultTo('-');
     table.string("collection").notNullable().defaultTo('-');
-    table.string("story").notNullable().defaultTo('-');
-    table.string("description").notNullable().defaultTo('-');
-    table.string("additional").notNullable().defaultTo('-');
+    table.text("story").notNullable().defaultTo('-');
+    table.text("description").notNullable().defaultTo('-');
+    table.text("additional").notNullable().defaultTo('-');
     table.string("dimensions").notNullable().defaultTo('-');
     table.string("location").notNullable().defaultTo('-');
-    table.string("provenance").notNullable().defaultTo('-');
+    table.text("provenance").notNullable().defaultTo('-');
     table.string("primary_image").notNullable().defaultTo('-');
     table.string("reference_id").notNullable().defaultTo('-');
     table.timestamp(true, true);

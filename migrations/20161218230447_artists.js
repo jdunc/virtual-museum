@@ -2,10 +2,10 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("artists", function(table) {
     table.increments("id").primary();
-    table.string("artist_name").notNullable();
-    table.string("brief").notNullable().defaultTo('-');
-    table.string("description").notNullable().defaultTo('-');
-    table.string("community").notNullable().defaultTo('-');
+    table.text("artist_name").notNullable();
+    table.text("brief").notNullable().defaultTo('-');
+    table.text("description").notNullable().defaultTo('-');
+    table.text("community").notNullable().defaultTo('-');
     table.timestamp(true, true);
   })
 };
