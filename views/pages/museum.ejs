@@ -69,13 +69,16 @@
                         <img class="article-image" src=" images/example-work01.jpg" border="0" alt="">
                     </div>
                     <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text"><%= item.item_name %></h1>
+                        <h1 class="mdl-card__title-text"><%= item.name %></h1>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <%= item.brief %>
+                        By: <%= item.artist_name %>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <%= item.community %>
+                        <%= item.type %>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <%= item.description %>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="portfolio-example01.html">Read more</a>

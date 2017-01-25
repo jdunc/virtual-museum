@@ -11,7 +11,7 @@ router.get('/items/display', (req, res, next) => {
     .then((images) => {
       knex('artists')
       .then((artists) => {
-        res.render('pages/items', {
+        res.render('pages/museum', {
           data: items,
           data2: images,
           data3: artists,
