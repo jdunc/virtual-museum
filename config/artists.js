@@ -9,7 +9,7 @@ module.exports = {
 <p>Emma Garrett has demonstrated rivercane basketry at festivals in Atlanta, Chattanooga, and EmmalineMrs.MrSnowbird, and she also travels to powwows occasionally. Her baskets have won first place at the Cherokee Fall Fair. They are sold at the Qualla Arts and Crafts Mutual. Her work has been featured in the documentary video Cherokee Basketweavers. In addition to weaving baskets, Emma Garrett sings with a gospel trio from the Zion Hill Church in the Snowbird community.</p>
 
 <p>Emmaline “Emma” Garrett is a member of the Eastern Band of Cherokee Indians and one of the few Cherokee basket weavers who continue to make rivercane baskets.  Mrs. Garrett collects the rivercane and uses natural dyes of walnut and bloodroot.  She learned to make baskets by watching her grandmother, then made them on her own, later teaching the skill to others.  Mrs. Garrett contributed to Weaving New Worlds: Southeastern Cherokee Women and the basketry written by Sarah H. Hill. Her baskets have been displayed at the Asheville Art Museum,  Western Carolina University Chelsea Gallery and Chatooga Conservancy.</p>`,
-    community: `Cherokee Community in Graham County, North Carolina`
+    community: 'Cherokee Community in Graham County, North Carolina',
   },
   // , {
   //   artist_name: 'Oglala Lakota (Oglala Sioux), 1830-1900'

@@ -1,11 +1,11 @@
-'use strict';
+
 
 const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
 const fs = require('fs');
 
-router.get('/artists', (req, res, next) =>{
+router.get('/artists', (req, res, next) => {
   // res.render('pages/index');
   knex('artists')
   .then((artists) => {
@@ -26,8 +26,8 @@ router.get('/artists', (req, res, next) =>{
     //   });
     // });
     // console.log('in route:',newArtists);
-    res.render('pages/artists',{
-      data: artists
+    res.render('pages/artists', {
+      data: artists,
     });
   });
   // .catch((err) => {
@@ -43,5 +43,5 @@ router.get('/artists', (req, res, next) =>{
 module.exports = router;
 
 function readJSON(path) {
-  return fs.readFile(path, 'utf8').then(JSON.parse)
+  return fs.readFile(path, 'utf8').then(JSON.parse);
 }
