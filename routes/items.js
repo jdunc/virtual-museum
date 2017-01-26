@@ -43,6 +43,12 @@ router.get('/museum/:id', (req, res) => {
   });
 });
 
+router.get('/items/:id', (req, res) => {
+  knex('items').where('id', req.params.id).first().then((items) => {
+    res.send(items);
+  });
+});
+
 router.post('/items', (req, res) => {
   console.log('HEADERS', req.headers);
   console.log('getting this!', req.body);

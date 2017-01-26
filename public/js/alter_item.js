@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 function fillPage(itemId){ //function to add editable form with info from database to page to allow user to update item
   $.get({
-    url: `/museum/${itemId}`,
+    url: `/items/${itemId}`,
   })
   .then(function(getData){
     $('#alterForm').remove();     //these two lines will remove the existing form / item information from the page
@@ -131,7 +131,7 @@ function fillPage(itemId){ //function to add editable form with info from databa
         contentType: 'application/json; charset=UTF-8'
       })
       .then((data) => {
-        getURL = `/museum/${data.id}`
+        getURL = `/items/${data.id}`
         $.get({ //ajax call to see if the information was actually updated in the database
           url: getURL,
         }).then((getData) => {
