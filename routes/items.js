@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
 
-router.get('/items/display', (req, res, next) => {
+router.get('/museum', (req, res, next) => {
   knex('items')
   .then((items) => {
     knex('images')
@@ -34,9 +34,12 @@ router.get('/items', (req, res, next) => {
   });
 });
 
-router.get('/items/:id', (req, res) => {
+router.get('/museum/:id', (req, res) => {
   knex('items').where('id', req.params.id).first().then((items) => {
-    res.send(items);
+    // res.send(items);
+    res.render('pages/items', {
+      data: items
+    });
   });
 });
 
