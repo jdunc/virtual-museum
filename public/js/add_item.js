@@ -18,7 +18,7 @@
     })
     .then((data) => {
       console.log(data);
-      getURL = `/items/${data.id}`
+      getURL = `/museum/${data.id}`
       $.get({
         url: getURL,
       }).then((getData) => {
