@@ -2,6 +2,7 @@
 exports.up = function (knex, Promise) {
   return knex.schema.createTable('artists', (table) => {
     table.increments('id').primary();
+    table.integer('count');
     table.text('artist_name').notNullable();
     table.text('brief').notNullable().defaultTo('-');
     table.text('description').notNullable().defaultTo('-');

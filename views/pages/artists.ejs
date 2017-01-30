@@ -41,7 +41,7 @@
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                     <a class="mdl-navigation__link" href="../">Home</a>
-                    <a class="mdl-navigation__link is-active" href="artists">Artists</a>
+                    <a class="mdl-navigation__link is-active" href="">Artists</a>
                     <a class="mdl-navigation__link" href="../museum">Museum</a>
                     <a class="mdl-navigation__link" href="../about">About</a>
                     <a class="mdl-navigation__link" href="../contact">Contact</a>
@@ -52,7 +52,7 @@
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
               <a class="mdl-navigation__link" href="../">Home</a>
-              <a class="mdl-navigation__link is-active" href="artists">Artists</a>
+              <a class="mdl-navigation__link is-active" href="">Artists</a>
               <a class="mdl-navigation__link" href="../museum">Museum</a>
               <a class="mdl-navigation__link" href="../about">About</a>
               <a class="mdl-navigation__link" href="../contact">Contact</a>
@@ -63,6 +63,34 @@
             <h2>Welcome!</h2>
           </div> -->
             <div class="mdl-grid portfolio-max-width">
+              <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                  <div class="mdl-card__title">
+                      <h2 class="mdl-card__title-text">Artists</h2>
+                  </div>
+                  <div class="mdl-card__media">
+                      <img class="article-image" src="../images/about-header.jpg" border="0" alt="">
+                  </div>
+
+                  <div class="mdl-grid portfolio-copy">
+                      <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Inclusion</h3>
+                      <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text no-padding ">
+                          <p>
+                              All of the artists featured within our museum are proponents of spreading the beauty and splendor of their craft with people around the world.  These artists are sharing a piece of their spiritual experience with their culture and the world as a whole to help spread the beauty of their lives. They are sharing their wonderful creations as a demonstration of good will for all of us people who share this earth together.
+                          </p>
+                      </div>
+
+
+
+
+                      <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Outreach</h3>
+
+                      <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text no-padding ">
+                          <p>
+                              Needs Updated... This site has been made possible thanks to the passion and generosity of several individuals who believe in the power of collaborative work to create positive impact for individuals everywhere.
+                          </p>
+                      </div>
+                  </div>
+              </div>
               <% data.forEach((artist) => { %>
                 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
                     <div class="mdl-card__media">
@@ -78,7 +106,7 @@
                         <%= artist.community %>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="portfolio-example01.html">Read more</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href='/artist/<%= artist.id %>'>Read more</a>
                     </div>
                 </div>
                 <% }); %>

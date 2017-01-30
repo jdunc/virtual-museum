@@ -16,8 +16,10 @@ const alter_item = require('./routes/alter_item');
 const remove_item = require('./routes/remove_item');
 const add_images_action = require('./routes/add_images_action');
 const add_artist = require('./routes/add_artist');
-const index = require('./routes/index')
-const about = require('./routes/about')
+const index = require('./routes/index');
+const about = require('./routes/about');
+const contact = require('./routes/contact');
+
 
 // var nocache = require('superagent-no-cache');
 var request = require('superagent');
@@ -44,6 +46,8 @@ app.use(add_images_action);
 app.use(add_artist);
 app.use(index);
 app.use(about);
+app.use(contact);
+
 app.use((_req, res, _next) => {
   res.sendStatus(404);
 });

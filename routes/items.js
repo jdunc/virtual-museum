@@ -40,6 +40,12 @@ router.get('/museum/:id', (req, res) => {
     res.render('pages/items', {
       data: items
     });
+    console.log('count',items.count);
+    var newCount = items.count + 1;
+    knex('items').where('id', req.params.id).update({count: newCount})
+    .returning('*').then((items2) => {
+      console.log(items2);
+    });
   });
 });
 

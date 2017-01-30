@@ -1,6 +1,9 @@
 .mdl-card__media {
   background-color: white;
 }
+.mdl-layout__content{
+  min-height: 100vh;
+}
 
 main{
   background-image: url('./img/bg-1.jpg');
