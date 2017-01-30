@@ -11,7 +11,7 @@ module.exports = {
 <p>Emmaline “Emma” Garrett is a member of the Eastern Band of Cherokee Indians and one of the few Cherokee basket weavers who continue to make rivercane baskets.  Mrs. Garrett collects the rivercane and uses natural dyes of walnut and bloodroot.  She learned to make baskets by watching her grandmother, then made them on her own, later teaching the skill to others.  Mrs. Garrett contributed to Weaving New Worlds: Southeastern Cherokee Women and the basketry written by Sarah H. Hill. Her baskets have been displayed at the Asheville Art Museum,  Western Carolina University Chelsea Gallery and Chatooga Conservancy.</p>`,
     community: 'Cherokee Community in Graham County, North Carolina',
     count: 0,
-  },{
+  }, {
     artist_name: 'Emmaline Garrett2',
     brief: 'Basketmaker',
     description: `<p>Emma Garrett makes river cane baskets, the oldest basketry tradition among the Cherokee. Only a few women in the Eastern Band of Cherokee Indians still make these beautiful baskets. She collects her own rivercane and dyes it with bloodroot or walnut. She also makes white oak baskets.</p>

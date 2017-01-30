@@ -30,16 +30,15 @@ router.get('/artists', (req, res, next) => {
       data: artists,
     });
   });
-
 });
 
-  router.get('/artist/:id', (req, res, next) => {
-    knex('artists').where('id', req.params.id).first().then((artist) => {
+router.get('/artist/:id', (req, res, next) => {
+  knex('artists').where('id', req.params.id).first().then((artist) => {
       // res.send(items);
-      res.render('pages/individual_artist', {
-        data: artist
-      });
+    res.render('pages/individual_artist', {
+      data: artist,
     });
+  });
 });
 
 module.exports = router;
